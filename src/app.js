@@ -43,7 +43,7 @@ class App {
             <button id="rank">排行榜</button>
             <div id="title">
                 人生开挂模拟器<br>
-                <div style="font-size:1.5rem; font-weight:normal;">这垃圾人生一秒也不想呆了</div>
+                <div style="font-size:1.5rem; font-weight:normal;">开挂的人生，不需要解释</div>
             </div>
             <button id="restart" class="mainbtn"><span class="iconfont">&#xe6a7;</span>立即重开</button>
         </div>
@@ -113,8 +113,8 @@ class App {
         talentPage
             .find('#next')
             .click(() => {
-                if (this.#talentSelected.size != 5) {
-                    this.hint('请选择5个天赋');
+                if (this.#talentSelected.size != 3) {
+                    this.hint('请选择3个天赋');
                     return;
                 }
                 this.#totalMax = 20 + this.#life.getTalentAllocationAddition(Array.from(this.#talentSelected).map(({ id }) => id));
@@ -223,7 +223,7 @@ class App {
         propertyPage
             .find('#start')
             .click(() => {
-                if (total() < this.#totalMax) {
+                if (total() < this.#totalMax + 10) {
                     this.hint(`你还有${this.#totalMax - total()}属性点没有分配完`);
                     return;
                 } else if (total() > this.#totalMax) {
